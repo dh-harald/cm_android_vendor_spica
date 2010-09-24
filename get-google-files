@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+import sys, random, urllib2, zipfile, StringIO, os
+from optparse import OptionParser
+
+FILENAME=["gapps-hdpi-20100817-signed.zip","gapps-mdpi-20100816-signed.zip","gapps-mdpi-tiny-20100816-signed.zip"]
+VERSIONS=["hdpi","mdpi","mdpi-tiny"]
+MIRRORS=["http://mirror.kanged.net/gapps/",]
+
+def device():
+    print "usage: get-google-files -m [method] -v [version]"
+    print "Note:  Device method is currently not implemented, please use download"
+    sys.exit(1)
+
+def download(version):
+    try:
+        os.makedirs("proprietary")
+    except:
+        pass
+    if len(MIRRORS) > 1:
+        i = random.randrange(0, len(MIRRORS)-1)
+    else:
+        i = 0
+
+    try:
+        j = VERSIONS.index(version.lower())
+    except ValueError:
+	print "GApps version not found, defaulting to HDPI"
+        j = 0
+
+    url = MIRRORS[i] + FILENAME[j]
+
+    print "Fetching %s GApps from %s" % (version.upper(),url)
+
+    data = urllib2.urlopen(url).read()
+    zip = zipfile.ZipFile(StringIO.StringIO(data),'r')
+    
+    for filename in zip.namelist():
+        if filename.split("/")[0] == "system" and filename[-1] != "/":
+            print "Extracting %s" % filename
+            try:
+                bytes = zip.read(filename)
+                fd = open("proprietary/"+os.path.basename(filename),"wb")
+                fd.write(bytes)
+                fd.close()
+            except Exception, e:
+                print e
+                pass
+
+def main():
+    parser = OptionParser(usage="usage: %prog [options]")
+    parser.add_option("-m", "--method", dest='method', default="download", help="Extraction Method: download")
+    parser.add_option("-v", "--version", dest='version', default="hdpi", help="GApps Version: hdpi, mdpi, mdpi-tiny [default: hdpi]")
+    (options, args) = parser.parse_args()
+
+    if options.method == "device":
+        return device()
+
+    if options.method == "download":
+        return download(options.version)
+
+if __name__ == '__main__':
+    main()

@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
     vendor/spica/prebuilt/common/xbin/powertop:system/xbin/powertop \
     vendor/spica/prebuilt/common/xbin/openvpn-up.sh:system/xbin/openvpn-up.sh
 
-SPICA_WITH_GOOGLE:=true
+#SPICA_WITH_GOOGLE:=true
 
 ifdef SPICA_WITH_GOOGLE
 

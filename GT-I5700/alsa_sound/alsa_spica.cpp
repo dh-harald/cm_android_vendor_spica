@@ -473,8 +473,8 @@ static status_t s_open(alsa_handle_t *handle, uint32_t devices, int mode)
         // The PCM stream is opened in blocking mode, per ALSA defaults.  The
         // AudioFlinger seems to assume blocking mode too, so asynchronous mode
         // should not be used.
-        err = snd_pcm_open(&handle->handle, devName, direction(handle),
-                SND_PCM_ASYNC);
+        err = snd_pcm_open(&handle->handle, devName, direction(handle), 0);
+        //        SND_PCM_ASYNC);
         if (err == 0) break;
 
         // See if there is a less specific name we can try.

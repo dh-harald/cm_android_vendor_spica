@@ -26,6 +26,7 @@ WIFI_DRIVER_MODULE_PATH     := "/lib/modules/dhd.ko"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/rtecdc.bin nvram_path=/system/etc/nvram.txt"
 WIFI_DRIVER_MODULE_NAME     := "dhd"
 
+BOARD_HAVE_BLUETOOTH    := false
 #BOARD_HAVE_BLUETOOTH    := true
 #BOARD_HAVE_BLUETOOTH_BCM    := true
 #BT_USE_BTL_IF := true

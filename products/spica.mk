@@ -2,7 +2,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_small.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 
-# Inherit some common samdroidmod stuff.
+# Inherit some common SamdroidMod stuff.
 $(call inherit-product, vendor/spica/products/common.mk)
 
 #
@@ -23,10 +23,10 @@ PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=$(TOP)/vendor/spica/prelink-lin
 #
 ifdef SAMDROID_NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=SamdroidMod-2-$(shell date +%m%d%Y)-NIGHTLY-Spica
+        ro.modversion=CyanogenMod-2-$(shell date +%m%d%Y)-NIGHTLY-Spica
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=SamdroidMod-2.0.0-Spica-alpha5
+        ro.modversion=CyanogenMod-2.0.0-Spica-alpha5
 endif
 
 # Time between scans in seconds. Keep it high to minimize battery drain.
@@ -41,7 +41,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=160
 
 PRODUCT_COPY_FILES += \
-        device/common/gps/gps.conf_AS_SUPL:system/etc/gps.conf
+        device/common/gps/gps.conf_EU_SUPL:system/etc/gps.conf
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
@@ -121,6 +121,7 @@ PRODUCT_COPY_FILES += \
     vendor/spica/prebuilt/spica/ril/efsd:system/bin/efsd \
     vendor/spica/prebuilt/spica/ril/rilclient-test:system/bin/rilclient-test \
     vendor/spica/prebuilt/spica/ril/libsec-ril.so:system/lib/libsec-ril.so
+#    vendor/spica/prebuilt/spica/ril/libsecril-client.so:system/lib/libsecril-client.so
 
 #
 # GSM APN list
@@ -133,4 +134,3 @@ PRODUCT_COPY_FILES += \
 #
 PRODUCT_COPY_FILES += \
     vendor/spica/prebuilt/spica/audio/asound.conf:system/etc/asound.conf
-

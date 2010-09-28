@@ -13,8 +13,8 @@ PRODUCT_BRAND := samsung
 PRODUCT_DEVICE := GT-I5700
 PRODUCT_MODEL := GT-I5700
 PRODUCT_MANUFACTURER := SAMSUNG
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_ID=Froyo BUILD_DISPLAY_ID=Froyo PRODUCT_NAME=spica BUILD_FINGERPRINT=/passion/passion/mahimahi:2.2/FRF91/43546:user/release-keys TARGET_BUILD_TYPE=userdebug BUILD_VERSION_TAGS=release-keys
-PRIVATE_BUILD_DESC="spica-user 2.2 FRF91 43546 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_ID=FRG83 BUILD_DISPLAY_ID=FRG83 PRODUCT_NAME=spica BUILD_FINGERPRINT=google/passion/passion/mahimahi:2.2.1/FRG83/60505:user/release-keys TARGET_BUILD_TYPE=userdebug BUILD_VERSION_TAGS=release-keys
+PRIVATE_BUILD_DESC="spica-user 2.2.1 FRG83 60505 release-keys"
 
 PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=$(TOP)/vendor/spica/prelink-linux-arm-spica.map
 
@@ -26,7 +26,7 @@ ifdef SAMDROID_NIGHTLY
         ro.modversion=CyanogenMod-2-$(shell date +%m%d%Y)-NIGHTLY-Spica
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-2.0.0-Spica-alpha5
+        ro.modversion=CyanogenMod-2.0.0-Spica-alpha6
 endif
 
 # Time between scans in seconds. Keep it high to minimize battery drain.

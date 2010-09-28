@@ -1,6 +1,6 @@
 # Generic leshakmod product
-PRODUCT_NAME := SamdroidMod
-PRODUCT_BRAND := leshak
+PRODUCT_NAME := CyanogenMod
+PRODUCT_BRAND := criminal
 PRODUCT_DEVICE := generic
 
 # Use edify for otapackage

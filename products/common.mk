@@ -35,7 +35,7 @@ PRODUCT_PACKAGES += \
     Superuser
 
 # Common CM overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/cyanogen/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/spica/overlay/spica
 
 # Bring in some audio files
 include frameworks/base/data/sounds/AudioPackage4.mk

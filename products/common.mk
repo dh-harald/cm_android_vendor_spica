@@ -29,8 +29,10 @@ PRODUCT_PACKAGES += \
     ADWLauncher \
     CMParts \
     CMPartsHelper \
+    CMStats \
     CMWallpapers \
     DSPManager \
+    FileManager \
     Stk \
     Superuser
 

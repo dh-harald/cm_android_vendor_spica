@@ -3,7 +3,7 @@
 #
 
 TARGET_CPU_ABI := armeabi
-TARGET_ARCH_VARIANT := armv5te-vfp
+TARGET_ARCH_VARIANT := armv6j
 TARGET_GLOBAL_CFLAGS += -mtune=arm1176jzf-s -mfpu=vfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=arm1176jzf-s -mfpu=vfp
 
@@ -26,6 +26,7 @@ BOARD_WLAN_DEVICE           := eth0
 WIFI_DRIVER_MODULE_PATH     := "/lib/modules/dhd.ko"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/rtecdc.bin nvram_path=/system/etc/nvram.txt"
 WIFI_DRIVER_MODULE_NAME     := "dhd"
+WPA_SUPPLICANT_VERSION      := VER_0_6_X
 
 BOARD_HAVE_BLUETOOTH    := false
 #BOARD_HAVE_BLUETOOTH    := true

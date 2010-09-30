@@ -23,10 +23,10 @@ PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=$(TOP)/vendor/spica/prelink-lin
 #
 ifdef SAMDROID_NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-2-$(shell date +%m%d%Y)-NIGHTLY-Spica
+        ro.modversion=CyanogenMod-6-$(shell date +%m%d%Y)-NIGHTLY-Spica
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-2.0.0-Spica-alpha6
+        ro.modversion=CyanogenMod-6.1.0-Spica-alpha6.2
 endif
 
 # Time between scans in seconds. Keep it high to minimize battery drain.

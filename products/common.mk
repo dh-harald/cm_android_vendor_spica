@@ -110,4 +110,10 @@ endif
 
 # Copy over the changelog to the device
 PRODUCT_COPY_FILES += \
-    vendor/spica/CHANGELOG:system/etc/CHANGELOG.txt
+	vendor/spica/CHANGELOG:system/etc/CHANGELOG.txt
+
+#
+# Copy bootanimation
+#
+PRODUCT_COPY_FILES += \
+	vendor/spica/prebuilt/mdpi/media/bootanimation.zip:system/media/bootanimation.zip

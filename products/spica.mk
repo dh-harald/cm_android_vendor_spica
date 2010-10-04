@@ -104,8 +104,7 @@ PRODUCT_COPY_FILES += \
 #
 PRODUCT_COPY_FILES += \
     vendor/spica/prebuilt/spica/hw/copybit.GT-I5700.so:system/lib/hw/copybit.GT-I5700.so \
-    vendor/spica/prebuilt/spica/hw/lights.GT-I5700.so:system/lib/hw/lights.GT-I5700.so \
-    vendor/spica/prebuilt/spica/hw/sensors.GT-I5700.so:system/lib/hw/sensors.GT-I5700.so 
+    vendor/spica/prebuilt/spica/hw/lights.GT-I5700.so:system/lib/hw/lights.GT-I5700.so
 
 #
 # Vold

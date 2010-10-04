@@ -143,7 +143,7 @@ struct sensors_module_t HAL_MODULE_INFO_SYM = {
 #define CONVERT_A                   (GRAVITY_EARTH / LSG)
 #define CONVERT_A_X                 (-CONVERT_A)
 #define CONVERT_A_Y                 (CONVERT_A)
-#define CONVERT_A_Z                 (-CONVERT_A)
+#define CONVERT_A_Z                 (CONVERT_A)
 
 // conversion of magnetic data to uT units
 #define CONVERT_M                   (1.0f/16.0f)

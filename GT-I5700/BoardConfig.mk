@@ -28,13 +28,11 @@ WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/rtecdc.bin nvram_path=
 WIFI_DRIVER_MODULE_NAME     := "dhd"
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
 
-BOARD_HAVE_BLUETOOTH    := false
-#BOARD_HAVE_BLUETOOTH    := true
-#BOARD_HAVE_BLUETOOTH_BCM    := true
-#BT_USE_BTL_IF := true
-#BT_ALT_STACK := true
-#BRCM_BTL_INCLUDE_A2DP := true
-#BRCM_BT_USE_BTL_IF := true
+BOARD_HAVE_BLUETOOTH    := true
+BT_USE_BTL_IF := true
+BT_ALT_STACK := true
+BRCM_BTL_INCLUDE_A2DP := true
+BRCM_BT_USE_BTL_IF := true
 
 BOARD_GPS_LIBRARIES := libsecgps libsecril-client
 

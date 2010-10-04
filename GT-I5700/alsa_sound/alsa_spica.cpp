@@ -101,7 +101,7 @@ static alsa_handle_t _defaultsOut = {
     module      : 0,
     devices     : AudioSystem::DEVICE_OUT_ALL,
     curDev      : 0,
-    curMode     : 0,
+    curMode     : 0, //must be set to 0 do not change
     handle      : 0,
     format      : SND_PCM_FORMAT_S16_LE, // AudioSystem::PCM_16_BIT
     channels    : 2,
@@ -114,7 +114,7 @@ static alsa_handle_t _defaultsOut = {
 static alsa_handle_t _defaultsIn = {
     module      : 0,
     devices     : AudioSystem::DEVICE_IN_ALL,
-    curDev      : 0,
+    curDev      : 0, //must be set to 0 do not change
     curMode     : 0,
     handle      : 0,
     format      : SND_PCM_FORMAT_S16_LE, // AudioSystem::PCM_16_BIT
@@ -133,11 +133,16 @@ struct device_suffix_t {
 /* The following table(s) need to match in order of the route bits
  */
 static const device_suffix_t deviceSuffix[] = {
-        {AudioSystem::DEVICE_OUT_EARPIECE,       "_Earpiece"},
-        {AudioSystem::DEVICE_OUT_SPEAKER,        "_Speaker"},
-        {AudioSystem::DEVICE_OUT_BLUETOOTH_SCO,  "_Bluetooth"},
-        {AudioSystem::DEVICE_OUT_WIRED_HEADSET,  "_Headset"},
-        {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP, "_Bluetooth-A2DP"},
+        {AudioSystem::DEVICE_OUT_EARPIECE,            "_Earpiece"},
+        {AudioSystem::DEVICE_OUT_SPEAKER,             "_Speaker"},
+        {AudioSystem::DEVICE_OUT_BLUETOOTH_SCO,       "_Bluetooth"},
+        {AudioSystem::DEVICE_OUT_WIRED_HEADSET,       "_Headset"},
+        {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP,      "_Bluetooth-A2DP"},
+	//recording devices:
+	{AudioSystem::DEVICE_IN_BLUETOOTH_SCO_HEADSET,"_Bluetooth"},
+	{AudioSystem::DEVICE_IN_WIRED_HEADSET,        "_Headset"},
+	{AudioSystem::DEVICE_IN_BUILTIN_MIC,          "_Microphone"},
+	{AudioSystem::DEVICE_IN_VOICE_CALL,           "_Voice"},
 };
 
 static const int deviceSuffixLen = (sizeof(deviceSuffix)

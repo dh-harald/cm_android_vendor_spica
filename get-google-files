@@ -24,8 +24,8 @@ def download(version):
     try:
         j = VERSIONS.index(version.lower())
     except ValueError:
-	print "GApps version not found, defaulting to HDPI"
-        j = 0
+	print "GApps version not found, defaulting to MDPI"
+        j = 1
 
     url = MIRRORS[i] + FILENAME[j]
 
@@ -49,7 +49,7 @@ def download(version):
 def main():
     parser = OptionParser(usage="usage: %prog [options]")
     parser.add_option("-m", "--method", dest='method', default="download", help="Extraction Method: download")
-    parser.add_option("-v", "--version", dest='version', default="hdpi", help="GApps Version: hdpi, mdpi, mdpi-tiny [default: hdpi]")
+    parser.add_option("-v", "--version", dest='version', default="mdpi", help="GApps Version: hdpi, mdpi, mdpi-tiny [default: mdpi]")
     (options, args) = parser.parse_args()
 
     if options.method == "device":

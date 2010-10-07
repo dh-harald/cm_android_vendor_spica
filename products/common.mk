@@ -46,6 +46,11 @@ include frameworks/base/data/sounds/AudioPackage4.mk
 PRODUCT_COPY_FILES += \
     vendor/spica/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/spica/prebuilt/common/lib/libncurses.so:system/lib/libncurses.so \
+    vendor/spica/prebuilt/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
+    vendor/spica/prebuilt/common/etc/init.d/04apps2sd:system/etc/init.d/04apps2sd \
+    vendor/spica/prebuilt/common/etc/init.d/05apps2sdoff:system/etc/init.d/05apps2sdoff \
+    vendor/spica/prebuilt/common/etc/init.d/07userinit:system/etc/init.d/07userinit \
+    vendor/spica/prebuilt/common/etc/init.d/99complete:system/etc/init.d/99complete \
     vendor/spica/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf \
     vendor/spica/prebuilt/common/etc/terminfo/l/linux:system/etc/terminfo/l/linux \
     vendor/spica/prebuilt/common/etc/terminfo/u/unknown:system/etc/terminfo/u/unknown \

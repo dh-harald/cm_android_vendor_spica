@@ -1,0 +1,5 @@
+#!/system/bin/sh
+
+sync;
+setprop lk.filesystem.ready 1;
+

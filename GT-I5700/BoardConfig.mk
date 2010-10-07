@@ -26,7 +26,6 @@ BOARD_WLAN_DEVICE           := eth0
 WIFI_DRIVER_MODULE_PATH     := "/lib/modules/dhd.ko"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/rtecdc.bin nvram_path=/system/etc/nvram.txt"
 WIFI_DRIVER_MODULE_NAME     := "dhd"
-WPA_SUPPLICANT_VERSION      := VER_0_6_X
 
 BOARD_HAVE_BLUETOOTH    := true
 BT_USE_BTL_IF := true

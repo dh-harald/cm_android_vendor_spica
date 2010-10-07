@@ -3,7 +3,7 @@
 #
 
 TARGET_CPU_ABI := armeabi
-TARGET_ARCH_VARIANT := armv6j
+TARGET_ARCH_VARIANT := armv5te-vfp
 TARGET_GLOBAL_CFLAGS += -mtune=arm1176jzf-s -mfpu=vfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=arm1176jzf-s -mfpu=vfp
 

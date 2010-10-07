@@ -26,7 +26,7 @@ ifdef SAMDROID_NIGHTLY
         ro.modversion=CyanogenMod-6-$(shell date +%m%d%Y)-NIGHTLY-Spica
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-6.1.0-Spica-alpha6.2
+        ro.modversion=CyanogenMod-6.1.0-Spica-alpha6.3
 endif
 
 # Time between scans in seconds. Keep it high to minimize battery drain.

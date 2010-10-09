@@ -26,14 +26,14 @@ ifdef SAMDROID_NIGHTLY
         ro.modversion=CyanogenMod-6-$(shell date +%m%d%Y)-NIGHTLY-Spica
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-6.1.0-Spica-alpha6.3
+        ro.modversion=CyanogenMod-6.1.0-RC0-Spica-alpha6.3
 endif
 
 # Time between scans in seconds. Keep it high to minimize battery drain.
 # This only affects the case in which there are remembered access points,
 # but none are in range.
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.supplicant_scan_interval=15
+    wifi.supplicant_scan_interval=30
 
 # density in DPI of the LCD of this board. This is used to scale the UI
 # appropriately. If this property is not defined, the default value is 160 dpi. 

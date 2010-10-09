@@ -70,7 +70,6 @@ ifdef SPICA_WITH_GOOGLE
     PRODUCT_COPY_FILES += \
 	vendor/spica/proprietary/CarHomeGoogle.apk:system/app/CarHomeGoogle.apk \
 	vendor/spica/proprietary/CarHomeLauncher.apk:system/app/CarHomeLauncher.apk \
-	vendor/spica/proprietary/com.amazon.mp3.apk:system/app/com.amazon.mp3.apk \
 	vendor/spica/proprietary/Facebook.apk:system/app/Facebook.apk \
 	vendor/spica/proprietary/GenieWidget.apk:system/app/GenieWidget.apk \
 	vendor/spica/proprietary/Gmail.apk:system/app/Gmail.apk \

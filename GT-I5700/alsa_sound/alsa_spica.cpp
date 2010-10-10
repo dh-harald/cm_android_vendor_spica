@@ -106,8 +106,8 @@ static alsa_handle_t _defaultsOut = {
     format      : SND_PCM_FORMAT_S16_LE, // AudioSystem::PCM_16_BIT
     channels    : 2,
     sampleRate  : DEFAULT_SAMPLE_RATE,
-    latency     : 14512, //200000, // Desired Delay in usec
-    bufferSize  : 640, //DEFAULT_SAMPLE_RATE / 5, // Desired Number of samples
+    latency     : 11609 , // Desired Delay in usec
+    bufferSize  : 512 ,   // Desired Number of samples
     modPrivate  : 0,
 };
 
@@ -120,8 +120,8 @@ static alsa_handle_t _defaultsIn = {
     format      : SND_PCM_FORMAT_S16_LE, // AudioSystem::PCM_16_BIT
     channels    : 1,
     sampleRate  : AudioRecord::DEFAULT_SAMPLE_RATE,
-    latency     : 1543500, //250000, // Desired Delay in usec
-    bufferSize  : 12348, //2048, // Desired Number of samples
+    latency     : 512000,  // Desired Delay in usec
+    bufferSize  : 4096 ,   // Desired Number of samples
     modPrivate  : 0,
 };
 
@@ -133,16 +133,16 @@ struct device_suffix_t {
 /* The following table(s) need to match in order of the route bits
  */
 static const device_suffix_t deviceSuffix[] = {
-        {AudioSystem::DEVICE_OUT_EARPIECE,            "_Earpiece"},
-        {AudioSystem::DEVICE_OUT_SPEAKER,             "_Speaker"},
-        {AudioSystem::DEVICE_OUT_BLUETOOTH_SCO,       "_Bluetooth"},
-        {AudioSystem::DEVICE_OUT_WIRED_HEADSET,       "_Headset"},
-        {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP,      "_Bluetooth-A2DP"},
-	//recording devices:
-	{AudioSystem::DEVICE_IN_BLUETOOTH_SCO_HEADSET,"_Bluetooth"},
-	{AudioSystem::DEVICE_IN_WIRED_HEADSET,        "_Headset"},
-	{AudioSystem::DEVICE_IN_BUILTIN_MIC,          "_Microphone"},
-	{AudioSystem::DEVICE_IN_VOICE_CALL,           "_Voice"},
+    {AudioSystem::DEVICE_OUT_EARPIECE,            "_Earpiece"},
+    {AudioSystem::DEVICE_OUT_SPEAKER,             "_Speaker"},
+    {AudioSystem::DEVICE_OUT_BLUETOOTH_SCO,       "_Bluetooth"},
+    {AudioSystem::DEVICE_OUT_WIRED_HEADSET,       "_Headset"},
+    {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP,      "_Bluetooth-A2DP"},
+    //recording devices:
+    {AudioSystem::DEVICE_IN_BLUETOOTH_SCO_HEADSET,"_Bluetooth"},
+    {AudioSystem::DEVICE_IN_WIRED_HEADSET,        "_Headset"},
+    {AudioSystem::DEVICE_IN_BUILTIN_MIC,          "_Microphone"},
+    {AudioSystem::DEVICE_IN_VOICE_CALL,           "_Voice"},
 };
 
 static const int deviceSuffixLen = (sizeof(deviceSuffix)
@@ -197,10 +197,11 @@ status_t setHardwareParams(alsa_handle_t *handle)
 {
     snd_pcm_hw_params_t *hardwareParams;
     status_t err;
-
+     
     snd_pcm_uframes_t bufferSize = handle->bufferSize;
     unsigned int requestedRate = handle->sampleRate;
     unsigned int latency = handle->latency;
+    int resample = 0;
 
     // snd_pcm_format_description() and snd_pcm_format_name() do not perform
     // proper bounds checking.
@@ -211,18 +212,18 @@ status_t setHardwareParams(alsa_handle_t *handle)
             handle->format) : "Invalid Format";
     const char *formatName = validFormat ? snd_pcm_format_name(handle->format)
             : "UNKNOWN";
-
+     
     if (snd_pcm_hw_params_malloc(&hardwareParams) < 0) {
         LOG_ALWAYS_FATAL("Failed to allocate ALSA hardware parameters!");
         return NO_INIT;
     }
-
+     
     err = snd_pcm_hw_params_any(handle->handle, hardwareParams);
     if (err < 0) {
         LOGE("Unable to configure hardware: %s", snd_strerror(err));
         goto done;
     }
-
+     
     // Set the interleaved read and write format.
     err = snd_pcm_hw_params_set_access(handle->handle, hardwareParams,
             SND_PCM_ACCESS_RW_INTERLEAVED);
@@ -231,7 +232,8 @@ status_t setHardwareParams(alsa_handle_t *handle)
                 snd_strerror(err));
         goto done;
     }
-
+     
+    // Set PCM format
     err = snd_pcm_hw_params_set_format(handle->handle, hardwareParams,
             handle->format);
     if (err < 0) {
@@ -239,9 +241,10 @@ status_t setHardwareParams(alsa_handle_t *handle)
                 formatName, formatDesc, snd_strerror(err));
         goto done;
     }
+     
+    LOGD("Set %s PCM format to %s (%s)", streamName(handle), formatName, formatDesc);
 
-    LOGV("Set %s PCM format to %s (%s)", streamName(), formatName, formatDesc);
-
+    // Set number of channels
     err = snd_pcm_hw_params_set_channels(handle->handle, hardwareParams,
             handle->channels);
     if (err < 0) {
@@ -249,13 +252,23 @@ status_t setHardwareParams(alsa_handle_t *handle)
                 handle->channels, snd_strerror(err));
         goto done;
     }
+     
+    LOGD("Using %i %s for %s.", handle->channels,
+            handle->channels == 1 ? "channel" : "channels", streamName(handle));
 
-    LOGV("Using %i %s for %s.", handle->channels,
-            handle->channels == 1 ? "channel" : "channels", streamName());
+    // Restrict to use only real sample rate
+    err = snd_pcm_hw_params_set_rate_resample(handle->handle, hardwareParams, resample);
+    if (err < 0) {
+        LOGE("Unable to %s hardware resampling: %s",
+                resample ? "enable" : "disable",
+                snd_strerror(err));
+        goto done;
+    }
 
+            // Set sample rate
     err = snd_pcm_hw_params_set_rate_near(handle->handle, hardwareParams,
             &requestedRate, 0);
-
+     
     if (err < 0)
         LOGE("Unable to set %s sample rate to %u: %s",
                 streamName(handle), handle->sampleRate, snd_strerror(err));
@@ -266,25 +279,12 @@ status_t setHardwareParams(alsa_handle_t *handle)
         LOGW("Requested rate (%u HZ) does not match actual rate (%u HZ)",
                 handle->sampleRate, requestedRate);
     else
-        LOGV("Set %s sample rate to %u HZ", stream, requestedRate);
-
-#ifdef DISABLE_HARWARE_RESAMPLING
-    // Disable hardware re-sampling.
-    err = snd_pcm_hw_params_set_rate_resample(handle->handle,
-            hardwareParams,
-            static_cast<int>(resample));
-    if (err < 0) {
-        LOGE("Unable to %s hardware resampling: %s",
-                resample ? "enable" : "disable",
-                snd_strerror(err));
-        goto done;
-    }
-#endif
+        LOGD("Set %s sample rate to %u HZ", streamName(handle), requestedRate);
 
     // Make sure we have at least the size we originally wanted
     err = snd_pcm_hw_params_set_buffer_size_near(handle->handle, hardwareParams,
             &bufferSize);
-
+     
     if (err < 0) {
         LOGE("Unable to set buffer size to %d:  %s",
                 (int)bufferSize, snd_strerror(err));
@@ -478,8 +478,7 @@ static status_t s_open(alsa_handle_t *handle, uint32_t devices, int mode)
         // The PCM stream is opened in blocking mode, per ALSA defaults.  The
         // AudioFlinger seems to assume blocking mode too, so asynchronous mode
         // should not be used.
-        err = snd_pcm_open(&handle->handle, devName, direction(handle), 0);
-        //        SND_PCM_ASYNC);
+        err = snd_pcm_open(&handle->handle, devName, direction(handle), 0);//SND_PCM_ASYNC);
         if (err == 0) break;
 
         // See if there is a less specific name we can try.

@@ -3,8 +3,9 @@ alpha6.3:
 2. rild port phase #1: using own rild with Samsung's libril.so -- needs testing
 3. Fixed ARM optimalizations
 4. Using DE-NISkA's sound sources -- please test it!
-5. Added antibyte/Xmister's recovery for better ext2/ext4 compatibility -- needs testing
-6. Some init.rc fixes [ch33kybutt]  
+5. Applied qbanin's 1% step battery driver
+6. Added antibyte/Xmister's recovery for better ext2/ext4 compatibility -- needs testing
+7. Some init.rc fixes [ch33kybutt]  
 
 alpha6.2: 20101004.143423 
 1. Sensors are working! Big thanks goes to DE-NISkA

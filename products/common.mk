@@ -116,6 +116,9 @@ endif
 PRODUCT_COPY_FILES += \
 	vendor/spica/CHANGELOG:system/etc/CHANGELOG.txt
 
+PRODUCT_COPY_FILES += \
+	vendor/cyanogen/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
+
 #
 # Copy bootanimation
 #

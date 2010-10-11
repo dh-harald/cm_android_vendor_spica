@@ -1,1 +1,55 @@
-SamdroidMod 2.0.0-alpha5
+alpha6.3:
+1. Updated CyanogenMod sources from github to recent version
+2. rild port phase #1: using own rild with Samsung's libril.so -- needs testing
+3. Fixed ARM optimalizations
+4. Using DE-NISkA's sound sources -- please test it!
+5. Added antibyte/Xmister's recovery for better ext2/ext4 compatibility -- needs testing
+6. Some init.rc fixes [ch33kybutt]  
+
+alpha6.2: 20101004.143423 
+1. Sensors are working! Big thanks goes to DE-NISkA
+2. Completly new bluetooth implementation based on i5800 sources, same result: only pairing
+3. Using DE-NISkA's sound sources, please test it!
+4. Google apps update: 20100930
+5. Several build.prop tweaks
+6. Adding SamdroidTools for APP2SD [LeshaK]
+7. Replaced bootanimation to official mdpi boot animation.
+8. Upgrade Multitouch driver to 2.3b [Gabriel-LG]
+
+alpha6.1: 20100929.130658 
+1. Updated CyanogenMod sources from github to recent version
+2. Disabled built-in tethering I hope wifi bug is gone!
+3. Add init.rc tweak by ch33kybutt
+4. Added bootanimation by 73v1n (Low Quality, High Speed)
+
+alpha6: 20100928.120730 
+1. Updated CyanogenMod sources from github to recent version
+2. (I hope) Fixed Superuser issue
+3. Fixed ext4 mounting typo
+4. Enabled built-in tethering It's not working!
+5. (I hope) Fixed network location problem
+
+alpha5.2: 20100927.103314
+1. Updated CyanogenMod sources from github to recent version
+2. Upgrade Google services to gapps-mdpi-20100926 from kanged.net
+3. Add 2.1 camera libraries: camera looks like working, Camera.apk: picture YES, movie: NO 
+4. Applied vflashbirdv's binary audio patches to solve in-call problem.
+5. Added multitouch 2.2
+6. Added more language support
+7. Added ext2/ext4 support in init.rc
+8. Added /etc/init.d/ running support
+9. Tried to solve Superuser issue, possible to lost root access in some cases  [tomorrow i'll try to fix it]
+
+alpha5.1: 20100924.090227.
+1. Applied DE-NISkA's patch, thanks! almost all sound issues are fixed
+2. FiX Bluetooth issues: Full 2.1 libraries and binaries seems working
+3. Updated CyanogenMod sources from github to recent version
+
+alpha5: 20100923.085323, based on i5700_Froyo_alpha5_with_gapps
+1. New kernel with MT v2.11b
+2. Apply headset patch [without DE-NISkA pathes, because it didn't worked for me]
+3. Apply vflashbirdv's anti reboot patch (works like a dream thanks!)
+4. Revert back 2.1 bluetooth libraries: BT looks like working!
+5. Apply GPS patch and revert back 2.1 rild: GPS looks like working!
+6. Upgrade Google services to gapps-mdpi-20100917 from kanged.net
+7. Using ADWLauncher instead of Launcher2

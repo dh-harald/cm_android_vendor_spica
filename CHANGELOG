@@ -1,4 +1,8 @@
-alpha6.3:
+alpha6.4:
+1. Updated CyanogenMod sources from github to recent version
+2. Applied volume control patch [vflashbirdv/DE-NISkA]
+
+alpha6.3: 20101011.095301
 1. Updated CyanogenMod sources from github to recent version
 2. rild port phase #1: using own rild with Samsung's libril.so -- needs testing
 3. Fixed ARM optimalizations

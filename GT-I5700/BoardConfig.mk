@@ -28,6 +28,7 @@ WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/rtecdc.bin nvram_path=
 WIFI_DRIVER_MODULE_NAME     := "dhd"
 
 BOARD_HAVE_BLUETOOTH    := true
+BOARD_HAVE_BLUETOOTH_BCM := true
 BT_USE_BTL_IF := true
 BT_ALT_STACK := true
 BRCM_BTL_INCLUDE_A2DP := true

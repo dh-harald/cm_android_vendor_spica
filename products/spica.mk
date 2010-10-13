@@ -26,7 +26,7 @@ ifdef SAMDROID_NIGHTLY
         ro.modversion=CyanogenMod-6-$(shell date +%m%d%Y)-NIGHTLY-Spica
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-6.1.0-RC0-Spica-alpha6.3
+        ro.modversion=CyanogenMod-6.1.0-RC0-Spica-alpha6.4
 endif
 
 # Time between scans in seconds. Keep it high to minimize battery drain.
@@ -133,3 +133,10 @@ PRODUCT_COPY_FILES += \
 #
 PRODUCT_COPY_FILES += \
     vendor/spica/prebuilt/spica/audio/asound.conf:system/etc/asound.conf
+
+#
+# SamdroidTools
+#
+PRODUCT_COPY_FILES += \
+    vendor/spica/prebuilt/spica/samdroidtools/SamdroidTools.apk:system/app/SamdroidTools.apk \
+    vendor/spica/prebuilt/spica/samdroidtools/libsamdroidtools.so:system/lib/libsamdroidtools.so

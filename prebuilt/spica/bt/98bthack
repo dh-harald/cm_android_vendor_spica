@@ -43,5 +43,5 @@ fi
 setprop ro.bt.bdaddr_path "/data/bd_addr"
 
 stop btld
-sleep 1;
+sleep 5;
 killall -9 btld > /dev/null 2>/dev/null

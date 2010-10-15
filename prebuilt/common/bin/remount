@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-FS=`cat /proc/mounts|grep /system|awk '{print $3;}'`
+FS=`cat /proc/mounts|grep /system|grep stl6|awk '{print $3;}'`
     case $1 in
 	ro )
 	    if [ "${FS}" = "rfs" ]

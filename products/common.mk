@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
     CMWallpapers \
     DSPManager \
     FileManager \
+    FM \
     Stk \
     Superuser
 

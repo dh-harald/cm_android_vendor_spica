@@ -5,25 +5,43 @@
 # - fix missing initialization
 #
 
+#
+# Safe Mode:
+# you can add your bt address here
+#
+# use capitalized letters, for example:
+# BD_ADDR="AA:BB:CC:DD:EE:00"
+#
+
+#BD_ADDR="00:00:00:00:00:00"
+
 setprop service.brcm.bt.btld 0
-killall -9 btld > /dev/null 2>/dev/null
+start btld > /dev/null 2>/dev/null
 /system/bin/btld -hb 3000000 -hp /dev/s3c_serial1 -lpm 1 >/dev/null 2>/dev/null &
 
 while [ "`logcat -d *:I|grep BDA|grep btl_cfg_get_bdaddr|grep -v busybox|wc -l`" -eq 0 ];
 do
-	sleep 1;
+    sleep 1;
 done
 
-BDA=`logcat -d *:I|grep BDA|grep btl_cfg_get_bdaddr|grep -v busybox|sed 's/.*BDA=//g'`
+if [ -z "${BD_ADDR}" ]
+then
+    BDA=`logcat -d *:I|grep BDA|grep btl_cfg_get_bdaddr|grep -v busybox|sed 's/.*BDA=//g'`
 
-B1=`echo ${BDA} | cut -c 1-2`
-B2=`echo ${BDA} | cut -c 3-4`
-B3=`echo ${BDA} | cut -c 5-6`
-B4=`echo ${BDA} | cut -c 7-8`
-B5=`echo ${BDA} | cut -c 9-10`
-B6=`echo ${BDA} | cut -c 11-12`
+    B1=`echo ${BDA} | cut -c 1-2`
+    B2=`echo ${BDA} | cut -c 3-4`
+    B3=`echo ${BDA} | cut -c 5-6`
+    B4=`echo ${BDA} | cut -c 7-8`
+    B5=`echo ${BDA} | cut -c 9-10`
+    B6=`echo ${BDA} | cut -c 11-12`
 
-echo "$B1:$B2:$B3:$B4:$B5:$B6" > /data/bd_addr
+    echo "$B1:$B2:$B3:$B4:$B5:$B6" > /data/bd_addr
+else
+    echo "${BD_ADDR}" > /data/bd_addr
+fi
+ 
 setprop ro.bt.bdaddr_path "/data/bd_addr"
 
+stop btld
+sleep 1;
 killall -9 btld > /dev/null 2>/dev/null

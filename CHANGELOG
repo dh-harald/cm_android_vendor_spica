@@ -2,6 +2,8 @@ alpha6.4:
 1. Updated CyanogenMod sources from github to recent version
 2. Applied volume control patch [vflashbirdv/DE-NISkA]
 3. Google apps update: 20101008
+4. Using Android/CyanogenMod Bluetooth with hacked brcm_patchram_plus
+5. Using Androbot's Gallery3D instead of CM's
 
 alpha6.3: 20101011.095301
 1. Updated CyanogenMod sources from github to recent version

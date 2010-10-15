@@ -4,6 +4,7 @@ alpha6.4:
 3. Google apps update: 20101008
 4. Using Android/CyanogenMod Bluetooth with hacked brcm_patchram_plus
 5. Using Androbot's Gallery3D instead of CM's
+6. /system is now read-only, added ext&rfs supported remount command
 
 alpha6.3: 20101011.095301
 1. Updated CyanogenMod sources from github to recent version

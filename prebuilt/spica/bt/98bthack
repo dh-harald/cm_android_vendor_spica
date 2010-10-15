@@ -17,7 +17,6 @@
 
 setprop service.brcm.bt.btld 0
 start btld > /dev/null 2>/dev/null
-/system/bin/btld -hb 3000000 -hp /dev/s3c_serial1 -lpm 1 >/dev/null 2>/dev/null &
 
 while [ "`logcat -d *:I|grep BDA|grep btl_cfg_get_bdaddr|grep -v busybox|wc -l`" -eq 0 ];
 do

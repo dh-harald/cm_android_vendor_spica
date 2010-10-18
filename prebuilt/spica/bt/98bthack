@@ -25,7 +25,7 @@ done
 
 if [ -z "${BD_ADDR}" ]
 then
-    BDA=`logcat -d *:I|grep BDA|grep btl_cfg_get_bdaddr|grep -v busybox|sed 's/.*BDA=//g'`
+    BDA=`logcat -d *:I|grep BDA|grep btl_cfg_get_bdaddr|grep -v busybox|tail -1|sed 's/.*BDA=//g'`
 
     B1=`echo ${BDA} | cut -c 1-2`
     B2=`echo ${BDA} | cut -c 3-4`

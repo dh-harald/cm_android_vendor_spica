@@ -41,26 +41,26 @@ Akmd::~Akmd() {
 void Akmd::fill_result_vector(Vector o, Vector a, Vector m, short temperature, short* out)
 {
     /* Establish the angle in E */
-    out[0] = roundf(o.x);
+    out[0] =  roundf(o.x);
     /* pitch */
-    out[1] = roundf(o.y);
+    out[1] =  roundf(o.y);
     /* roll */
-    out[2] = roundf(o.z);
+    out[2] = -roundf(o.z);
     
     out[3] = temperature;
     out[4] = 3;
     out[5] = 3;
 
 //dont know why
-    out[6] = -roundf(a.y);
-    out[7] =  roundf(a.z);
-    out[8] =  roundf(a.x);
+    out[6] =   roundf(a.x);
+    out[7] =   roundf(a.z);
+    out[8] =  -roundf(a.y);
     
     
     
-    out[9] =  roundf(m.x);
-    out[10] = roundf(m.y);
-    out[11] = roundf(m.z);
+    out[9] =   roundf(m.x);
+    out[10] =  roundf(m.y);
+    out[11] = -roundf(m.z);
 }
 
 /****************************************************************************/

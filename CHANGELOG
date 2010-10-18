@@ -1,4 +1,9 @@
-alpha6.4:
+alpha6.5:
+1. Updated CyanogenMod sources from github to recent version
+2. Add baudrate to speedup BT
+3. Corrected directions for accel, pitch, roll (DE-NISkA)
+
+alpha6.4: 20101015.125310
 1. Updated CyanogenMod sources from github to recent version
 2. Applied volume control patch [vflashbirdv/DE-NISkA]
 3. Google apps update: 20101008

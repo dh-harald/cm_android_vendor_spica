@@ -79,7 +79,7 @@ void BMA020::measure()
     
     SUCCEED(ioctl(fd, BMA020_READ_ACCEL_XYZ, &accels) == 0);
 
-    abuf[index] = Vector(-accels.x, accels.y, accels.z);
+    abuf[index] = Vector(-accels.y, accels.x, -accels.z);
 
     index = (index + 1) & 1;
 

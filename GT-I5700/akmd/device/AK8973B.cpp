@@ -18,7 +18,12 @@ AK8973B::AK8973B(int dgain, int again)
 
     magnetometer_gain = dgain;
     fixed_magnetometer_gain = again;
-     
+    
+    //starting offset
+    analog_offset[0]=-3;
+    analog_offset[1]=-3;
+    analog_offset[2]=-5;
+    
     fd = open("/dev/akm8973_daemon", O_RDONLY);
     SUCCEED(fd != -1);
     SUCCEED(ioctl(fd, ECS_IOCTL_RESET, NULL) == 0);

@@ -78,8 +78,6 @@ void mainloop(int d_gain, int a_gain)
 
 int main(int argc, char **argv)
 {
-
-/*
     if (argc != 3) {
         printf("Usage: akmd <dg> <ag>\n");
         printf("\n");
@@ -89,14 +87,9 @@ int main(int argc, char **argv)
         printf("Both parameters are probably device model specific.\n");
         return 1;
     }
-*/
-    int d_gain = 0;
-    int a_gain = 0;
 
-    if (argc == 3) {
-        d_gain = atoi(argv[1]);
-        a_gain = atof(argv[2]);
-    }
+    int  d_gain = atoi(argv[1]);
+    int  a_gain = atof(argv[2]);
 
     LOGI("Akmd: opening devices");
 

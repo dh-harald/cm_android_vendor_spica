@@ -36,7 +36,13 @@ Vector OrientationAdapter::read() {
     float y = 180.0f - rad2deg(atan2f(o2l, o1l));
     
     /* pitch x*/
-    float p = 90.0f - rad2deg(acosf(earth.y / earth.length()));
+    float p = rad2deg(asinf(earth.y / earth.length()));
+    if (earth.z > 0) {
+        p = 180.0f - p;
+        if (p > 180.0f) {
+            p -= 360.0f;
+        }
+    }
 
     /* roll y*/
     float r = 90.0f - rad2deg(acosf(earth.x / earth.length()));

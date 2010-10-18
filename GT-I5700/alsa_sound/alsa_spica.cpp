@@ -133,16 +133,21 @@ struct device_suffix_t {
 /* The following table(s) need to match in order of the route bits
  */
 static const device_suffix_t deviceSuffix[] = {
-    {AudioSystem::DEVICE_OUT_EARPIECE,            "_Earpiece"},
-    {AudioSystem::DEVICE_OUT_SPEAKER,             "_Speaker"},
-    {AudioSystem::DEVICE_OUT_BLUETOOTH_SCO,       "_Bluetooth"},
-    {AudioSystem::DEVICE_OUT_WIRED_HEADSET,       "_Headset"},
-    {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP,      "_Bluetooth-A2DP"},
+    {AudioSystem::DEVICE_OUT_EARPIECE,                  "_Earpiece"},
+    {AudioSystem::DEVICE_OUT_SPEAKER,                   "_Speaker"},
+    {AudioSystem::DEVICE_OUT_WIRED_HEADSET,             "_Headset"},
+    {AudioSystem::DEVICE_OUT_WIRED_HEADPHONE,           "_Headphone"},
+    {AudioSystem::DEVICE_OUT_BLUETOOTH_SCO,             "_Bluetooth-SCO"},
+    {AudioSystem::DEVICE_OUT_BLUETOOTH_SCO_HEADSET,     "_Bluetooth-SCO-Headset"},
+    {AudioSystem::DEVICE_OUT_BLUETOOTH_SCO_CARKIT,      "_Bluetooth-SCO-Carkit"},
+    {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP,            "_Bluetooth-A2DP"},
+    {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES, "_Bluetooth-A2DP-Headphone"},
+    {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER,    "_Bluetooth-A2DP-Speaker"},
     //recording devices:
-    {AudioSystem::DEVICE_IN_BLUETOOTH_SCO_HEADSET,"_Bluetooth"},
-    {AudioSystem::DEVICE_IN_WIRED_HEADSET,        "_Headset"},
-    {AudioSystem::DEVICE_IN_BUILTIN_MIC,          "_Microphone"},
-    {AudioSystem::DEVICE_IN_VOICE_CALL,           "_Voice"},
+    {AudioSystem::DEVICE_IN_BLUETOOTH_SCO_HEADSET,      "_Bluetooth"},
+    {AudioSystem::DEVICE_IN_WIRED_HEADSET,              "_Headset"},
+    {AudioSystem::DEVICE_IN_BUILTIN_MIC,                "_Microphone"},
+    {AudioSystem::DEVICE_IN_VOICE_CALL,                 "_Voice"},
 };
 
 static const int deviceSuffixLen = (sizeof(deviceSuffix)
@@ -340,8 +345,8 @@ status_t setHardwareParams(alsa_handle_t *handle)
         }
     }
 
-    LOGV("Buffer size: %d", (int)bufferSize);
-    LOGV("Latency: %d", (int)latency);
+    LOGD("Buffer size: %d", (int)bufferSize);
+    LOGD("Latency: %d", (int)latency);
 
     handle->bufferSize = bufferSize;
     handle->latency = latency;

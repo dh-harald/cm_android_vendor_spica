@@ -32,9 +32,7 @@ PRODUCT_PACKAGES += \
     CMPartsHelper \
     CMStats \
     CMWallpapers \
-    DSPManager \
     FileManager \
-    FM \
     Stk \
     Superuser
 

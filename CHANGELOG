@@ -3,7 +3,8 @@ alpha6.5:
 2. Added more sound routes to BT headsets [DE-NISkA]
 3. Add baudrate to speedup BT
 4. Corrected directions for accel, pitch, roll (DE-NISkA)
-5. Some script fixes: remount, 98bthack
+5. Some script fixes: remount
+6. Delete 98bthack, we don't need it
 
 alpha6.4: 20101015.125310
 1. Updated CyanogenMod sources from github to recent version

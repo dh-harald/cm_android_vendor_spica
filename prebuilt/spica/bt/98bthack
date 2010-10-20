@@ -23,6 +23,11 @@ do
     sleep 1;
 done
 
+if [ -z "${BD_ADDR}" ] && [ -f "/data/bd_addr" ]
+then
+    setprop ro.bt.bdaddr_path "/data/bd_addr"
+fi
+
 if [ -n "${BD_ADDR}" ]
 then
     echo "${BD_ADDR}" > /data/bd_addr

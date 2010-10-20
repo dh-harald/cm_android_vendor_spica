@@ -152,5 +152,4 @@ PRODUCT_COPY_FILES += \
 #
 PRODUCT_COPY_FILES += \
     vendor/spica/prebuilt/spica/bt/btld:system/bin/btld \
-    vendor/spica/prebuilt/spica/bt/BCM4325D1_004.002.004.0153.0173.hcd:system/bin/BCM4325D1_004.002.004.0153.0173.hcd \
-    vendor/spica/prebuilt/spica/bt/98bthack:system/etc/init.d/98bthack
+    vendor/spica/prebuilt/spica/bt/BCM4325D1_004.002.004.0153.0173.hcd:system/bin/BCM4325D1_004.002.004.0153.0173.hcd

@@ -36,3 +36,7 @@ BRCM_BT_USE_BTL_IF := true
 
 BOARD_GPS_LIBRARIES := libsecgps libsecril-client
 
+#
+# vflashbird's camcoder fix
+#
+BUILD_PV_VIDEO_ENCODERS := 1

@@ -3,6 +3,7 @@ alpha7:
 2. Applied video recording patch for camcoder [vflashbirdv]
 3. Applied audio recording patch for compressed audio format [vflashbirdv]
 4. Back to 5% battery driver
+5. Applied kernel patches: memory control tweak, sound fix [antibyte]
 
 alpha6.5:
 1. Updated CyanogenMod sources from github to recent version

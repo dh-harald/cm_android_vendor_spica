@@ -4,8 +4,9 @@ alpha7:
 3. Applied audio recording patch for compressed audio format [vflashbirdv]
 4. Back to 5% battery driver
 5. Applied kernel patches: memory control tweak, sound fix [antibyte]
+6. Some installd & application install fix
 
-alpha6.5:
+alpha6.5: 20101019.165833
 1. Updated CyanogenMod sources from github to recent version
 2. Added more sound routes to BT headsets [DE-NISkA]
 3. Add baudrate to speedup BT

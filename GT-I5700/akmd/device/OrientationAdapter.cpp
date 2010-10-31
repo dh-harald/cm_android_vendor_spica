@@ -37,10 +37,10 @@ Vector OrientationAdapter::read() {
     
     /* pitch x*/
     float p = rad2deg(asinf(earth.y / earth.length()));
-    if (earth.z > 0) {
-        p = 180.0f - p;
-        if (p > 180.0f) {
-            p -= 360.0f;
+    if (earth.z < 0) { // means that phone is on rotation at -pi/2 to pi/2
+        p = -180.0f - p;
+        if (p < -180.0f) {
+            p += 360.0f;
         }
     }
 

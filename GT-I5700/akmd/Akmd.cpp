@@ -45,13 +45,13 @@ void Akmd::fill_result_vector(Vector o, Vector a, Vector m, short temperature, s
     /* pitch */
     out[1] =  roundf(o.y);
     /* roll */
-    out[2] = -roundf(o.z);
+    out[2] =  roundf(o.z);
     
     out[3] = temperature;
     out[4] = 3;
     out[5] = 3;
 
-//dont know why
+    /* because of the physical arrangement of BMA */
     out[6] =   roundf(a.x);
     out[7] =   roundf(a.z);
     out[8] =  -roundf(a.y);

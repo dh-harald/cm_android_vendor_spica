@@ -3,6 +3,7 @@ alpha7.1:
 2. Added multitouch driver 2.4 [Gabriel-LG]
 3. Update Xmister's recovery
 4. Possible market error -18 [hotchili]
+5. Sensor fixes [cadavre]
 
 alpha7:
 1. Updated CyanogenMod sources to 6.1.0-RC1

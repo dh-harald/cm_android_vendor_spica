@@ -1,3 +1,9 @@
+alpha7.1:
+1. Updated CyanogenMod sources to
+2. Added multitouch driver 2.4 [Gabriel-LG]
+3. Update Xmister's recovery
+4. Possible market error -18 [hotchili]
+
 alpha7:
 1. Updated CyanogenMod sources to 6.1.0-RC1
 2. Applied video recording patch for camcoder [vflashbirdv]

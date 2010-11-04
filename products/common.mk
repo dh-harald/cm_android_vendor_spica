@@ -81,7 +81,10 @@ ifdef SPICA_WITH_GOOGLE
     PRODUCT_COPY_FILES += \
 	vendor/spica/proprietary/CarHomeGoogle.apk:system/app/CarHomeGoogle.apk \
 	vendor/spica/proprietary/CarHomeLauncher.apk:system/app/CarHomeLauncher.apk \
+	vendor/spica/proprietary/com.google.android.maps.jar:system/framework/com.google.android.maps.jar \
+	vendor/spica/proprietary/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
 	vendor/spica/proprietary/Facebook.apk:system/app/Facebook.apk \
+	vendor/spica/proprietary/features.xml:system/etc/permissions/features.xml \
 	vendor/spica/proprietary/GenieWidget.apk:system/app/GenieWidget.apk \
 	vendor/spica/proprietary/Gmail.apk:system/app/Gmail.apk \
 	vendor/spica/proprietary/GoogleBackupTransport.apk:system/app/GoogleBackupTransport.apk \
@@ -97,6 +100,8 @@ ifdef SPICA_WITH_GOOGLE
 	vendor/spica/proprietary/HtcSettings.apk:system/app/HtcSettings.apk \
 	vendor/spica/proprietary/kickback.apk:system/app/kickback.apk \
 	vendor/spica/proprietary/LatinImeTutorial.apk:system/app/LatinImeTutorial.apk \
+	vendor/spica/proprietary/libspeech.so:system/lib/libspeech.so \
+	vendor/spica/proprietary/libvoicesearch.so:system/lib/libvoicesearch.so \
 	vendor/spica/proprietary/Maps.apk:system/app/Maps.apk \
 	vendor/spica/proprietary/MarketUpdater.apk:system/app/MarketUpdater.apk \
 	vendor/spica/proprietary/MediaUploader.apk:system/app/MediaUploader.apk \
@@ -111,11 +116,7 @@ ifdef SPICA_WITH_GOOGLE
 	vendor/spica/proprietary/Twitter.apk:system/app/Twitter.apk \
 	vendor/spica/proprietary/Vending.apk:system/app/Vending.apk \
 	vendor/spica/proprietary/VoiceSearch.apk:system/app/VoiceSearch.apk \
-	vendor/spica/proprietary/YouTube.apk:system/app/YouTube.apk \
-	vendor/spica/proprietary/com.google.android.maps.xml:./system/etc/permissions/com.google.android.maps.xml \
-	vendor/spica/proprietary/com.google.android.maps.jar:./system/framework/com.google.android.maps.jar \
-	vendor/spica/proprietary/features.xml:./system/etc/permissions/features.xml \
-	vendor/spica/proprietary/libspeech.so:./system/lib/libspeech.so
+	vendor/spica/proprietary/YouTube.apk:system/app/YouTube.apk
 else
     PRODUCT_PACKAGES += \
         Provision \

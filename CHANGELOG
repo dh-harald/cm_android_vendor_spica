@@ -2,7 +2,7 @@ alpha7.1:
 1. Updated CyanogenMod sources from github
 2. Added multitouch driver 2.4 [Gabriel-LG]
 3. Update Xmister's recovery
-4. Possible market error -18 [hotchili]
+4. AppsOnSD is working (thanks for hotchili some rumor)
 5. Sensor fixes [cadavre]
 6. Possible Camera fix
 7. Improved vibrator driver [Gabriel-LG]

@@ -143,11 +143,18 @@ static const device_suffix_t deviceSuffix[] = {
     {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP,            "_Bluetooth-A2DP"},
     {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES, "_Bluetooth-A2DP-Headphone"},
     {AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER,    "_Bluetooth-A2DP-Speaker"},
+#ifdef HAVE_FM_RADIO
+    {AudioSystem::DEVICE_OUT_FM,                        "_FM"},
+#endif
     //recording devices:
     {AudioSystem::DEVICE_IN_BLUETOOTH_SCO_HEADSET,      "_Bluetooth"},
     {AudioSystem::DEVICE_IN_WIRED_HEADSET,              "_Headset"},
     {AudioSystem::DEVICE_IN_BUILTIN_MIC,                "_Microphone"},
     {AudioSystem::DEVICE_IN_VOICE_CALL,                 "_Voice"},
+#ifdef HAVE_FM_RADIO
+    {AudioSystem::DEVICE_IN_FM_RX,                      "_FM"},
+    {AudioSystem::DEVICE_IN_FM_RX_A2DP,                 "_FM-A2DP"},
+#endif
 };
 
 static const int deviceSuffixLen = (sizeof(deviceSuffix)

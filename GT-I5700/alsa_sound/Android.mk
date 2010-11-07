@@ -19,6 +19,10 @@ ifneq ($(ALSA_DEFAULT_SAMPLE_RATE),)
     LOCAL_CFLAGS += -DALSA_DEFAULT_SAMPLE_RATE=$(ALSA_DEFAULT_SAMPLE_RATE)
 endif
 
+ifeq ($(BOARD_HAVE_FM_RADIO),true)
+  LOCAL_CFLAGS += -DHAVE_FM_RADIO
+endif
+
   LOCAL_C_INCLUDES += external/alsa-lib/include
 
   LOCAL_C_INCLUDES += hardware/alsa_sound

@@ -36,6 +36,11 @@ PRODUCT_PACKAGES += \
     Stk \
     Superuser
 
+ifdef BOARD_HAVE_FM_RADIO
+    PRODUCT_PACKAGES += \
+    FM
+endif
+
 # Live wallpaper packages
 PRODUCT_PACKAGES += \
     LiveWallpapers \
@@ -56,6 +61,8 @@ include frameworks/base/data/sounds/AudioPackage4.mk
 PRODUCT_COPY_FILES += \
     vendor/spica/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/spica/prebuilt/common/bin/remount:system/bin/remount \
+    vendor/spica/prebuilt/common/bin/compcache:system/bin/compcache \
+    vendor/spica/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache \
     vendor/spica/prebuilt/common/lib/libncurses.so:system/lib/libncurses.so \
     vendor/spica/prebuilt/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
     vendor/spica/prebuilt/common/etc/init.d/04apps2sd:system/etc/init.d/04apps2sd \

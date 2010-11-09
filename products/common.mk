@@ -36,7 +36,7 @@ PRODUCT_PACKAGES += \
     Stk \
     Superuser
 
-ifdef BOARD_HAVE_FM_RADIO
+ifeq ($(BOARD_HAVE_FM_RADIO),true)
     PRODUCT_PACKAGES += \
     FM
 endif

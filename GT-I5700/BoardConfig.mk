@@ -3,9 +3,9 @@
 #
 
 TARGET_CPU_ABI := armeabi
-TARGET_ARCH_VARIANT := armv5te-vfp
-TARGET_GLOBAL_CFLAGS += -mtune=arm1176jzf-s -mfpu=vfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=arm1176jzf-s -mfpu=vfp
+TARGET_ARCH_VARIANT := armv6-vfp
+TARGET_GLOBAL_CFLAGS += -mtune=arm1176jzf-s
+TARGET_GLOBAL_CPPFLAGS += -mtune=arm1176jzf-s
 
 TARGET_NO_RECOVERY := true
 TARGET_NO_BOOTLOADER := true
@@ -29,7 +29,7 @@ WIFI_DRIVER_MODULE_PATH     := "/lib/modules/dhd.ko"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/rtecdc.bin nvram_path=/system/etc/nvram.txt"
 WIFI_DRIVER_MODULE_NAME     := "dhd"
 
-BOARD_HAVE_BLUETOOTH    := true
+BOARD_HAVE_BLUETOOTH     := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 BOARD_GPS_LIBRARIES := libsecgps libsecril-client

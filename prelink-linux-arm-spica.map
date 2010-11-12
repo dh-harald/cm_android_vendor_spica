@@ -41,9 +41,9 @@ libbluetooth.so         0xAE800000 # [~1M]
 libdbus.so              0xAE700000 # [~1M]
 
 # extended system libraries
-libril.so               0xAE600000 # [~1M]
+libwpa_client.so        0xAE600000 # [<64K]
 libreference-ril.so     0xAE500000 # [~1M]
-libwpa_client.so        0xAE400000 # [<64K]
+libril.so               0xAE400000 # [~1M]
 libnetutils.so          0xAE300000 # [~1M]
 
 # core dalvik runtime support

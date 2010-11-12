@@ -70,8 +70,7 @@ PRODUCT_COPY_FILES += \
     vendor/spica/prebuilt/spica/wifi/wifi.conf:system/etc/wifi.conf \
     vendor/spica/prebuilt/spica/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     vendor/spica/prebuilt/spica/wifi/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    vendor/spica/prebuilt/spica/wifi/wlservice:system/bin/wlservice \
-    vendor/spica/prebuilt/spica/wifi/wpa_supplicant:system/bin/wpa_supplicant
+    vendor/spica/prebuilt/spica/wifi/wlservice:system/bin/wlservice
 
 #
 # Display (2D)

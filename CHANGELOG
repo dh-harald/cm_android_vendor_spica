@@ -1,12 +1,14 @@
 alpha7.3:
 1. Applied vflashbirdv's sound record and camcoder fix
 2. using 100% CM wifi implementation (thanks to funman)
+3. Updated Ultimate Spica Recovery
+4. Updated CyanogenMod sources from github
 
-alpha7.2:
+alpha7.2: 20101108.091305
 1. Ultimate Spica Recovery [Xmister]
 2. Compcache support [hotchili]
 
-alpha7.1:
+alpha7.1: 20101104.204809
 1. Updated CyanogenMod sources from github
 2. Added multitouch driver 2.4 [Gabriel-LG]
 3. Update Xmister's recovery

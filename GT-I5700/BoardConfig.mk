@@ -4,8 +4,6 @@
 
 TARGET_CPU_ABI := armeabi
 TARGET_ARCH_VARIANT := armv6-vfp
-TARGET_GLOBAL_CFLAGS += -mtune=arm1176jzf-s
-TARGET_GLOBAL_CPPFLAGS += -mtune=arm1176jzf-s
 
 TARGET_NO_RECOVERY := true
 TARGET_NO_BOOTLOADER := true

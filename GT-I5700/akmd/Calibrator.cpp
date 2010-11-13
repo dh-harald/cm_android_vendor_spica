@@ -20,7 +20,7 @@ Calibrator::Calibrator(int validity)
     this->validity = validity;
 }
 
-void Calibrator::reset()
+void Calibrator::reset(bool loadmag)
 {
     calibrated = false;
     readingfromfile = false;

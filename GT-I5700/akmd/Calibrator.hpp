@@ -18,6 +18,9 @@ class Calibrator {
     int minimum_points_needed;
 
     int idx;
+    bool calibrated;
+    bool fad_exsists;
+    bool readingfromfile;
     point_t point_cloud[PCR];
     Vector old_nv;
 
@@ -31,7 +34,7 @@ class Calibrator {
 
     void update(int time, Vector v);
     bool try_fit(int time);
-    void reset();
+    void reset(bool loadmag);
 };
 
 }

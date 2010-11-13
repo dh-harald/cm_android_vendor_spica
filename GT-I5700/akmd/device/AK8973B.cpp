@@ -14,6 +14,7 @@ namespace akmd {
 AK8973B::AK8973B(int dgain, int again)
 : magnetometer(600)
 {
+    magnetometer.reset(true);
     mbuf = Vector();
 
     magnetometer_gain = dgain;
@@ -136,7 +137,7 @@ void AK8973B::calibrate()
     /* Correct for scale and offset. */
     m = m.add(magnetometer.center.multiply(-1));
     m = m.multiply(magnetometer.scale);
-//    LOGD("mf x=%d y=%d z=%d",(int)m.x,(int)m.y,(int)m.z);
+    //LOGD("mf x=%d y=%d z=%d",(int)m.x,(int)m.y,(int)m.z);
 }
 
 int AK8973B::get_delay() {
@@ -179,7 +180,7 @@ void AK8973B::measure() {
                                      ).multiply(0.5f));
     else m = mbuf;
     
-//    LOGD("mf x=%d y=%d z=%d",(int)mbuf.x,(int)mbuf.y,(int)mbuf.z);
+    //LOGD("mf x=%d y=%d z=%d",(int)mbuf.x,(int)mbuf.y,(int)mbuf.z);
     calibrate_magnetometer_analog();
     calibrate();
 }

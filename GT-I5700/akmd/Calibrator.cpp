@@ -4,6 +4,8 @@
 
 #include <math.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <fcntl.h>
 
 #include <utils/Log.h>
 
@@ -16,18 +18,66 @@ namespace akmd {
 Calibrator::Calibrator(int validity)
 {
     this->validity = validity;
-    reset();
 }
 
-void Calibrator::reset()
+void Calibrator::reset(bool loadmag)
 {
+    calibrated = false;
+    readingfromfile = false;
+    if(loadmag) {
+        readingfromfile = true;
+        /* Check if calibration data file exsists. */
+        FILE *fad = fopen("/data/misc/akmd.dat","rb");
+        if(fad != NULL) {
+            fad_exsists = true;
+            LOGI("compass calibration file exsist");
+        }
+        else {
+            fad_exsists = false;
+            LOGI("compass calibration file doesnt exsist");
+        }
+        if(fad_exsists) {
+            float akmd_data[139] = {0,};
+            /* Read recorded calibration data from file. */
+            fread(akmd_data, sizeof(float), 139, fad);
+            center = Vector(akmd_data[0], akmd_data[1], akmd_data[2]);
+            scale  = Vector(akmd_data[3], akmd_data[4], akmd_data[5]);
+            old_nv = Vector(akmd_data[6], akmd_data[7], akmd_data[8]);
+            minimum_points_needed = akmd_data[9];
+            idx = akmd_data[10];
+            memset(point_cloud, 0, sizeof(point_cloud));
+            for(int j=0;j<32;j++) {
+                    point_cloud[j].v.x = akmd_data[11+(j*4)];
+                    point_cloud[j].v.y = akmd_data[12+(j*4)];
+                    point_cloud[j].v.z = akmd_data[13+(j*4)];
+                    point_cloud[j].time = (int)akmd_data[14+(j*4)];
+            }
+            fclose(fad);
+            calibrated = true;
+            LOGI("compass calibration data obtained from a file");
+	    LOGI("compass calibrated to offset=(%f %f %f) scale=(%f %f %f)", center.x, center.y, center.z, scale.x, scale.y, scale.z);
+        }
+        else {
+            /* There is no saved calibration data and there is a need to start over again. */
+            center = Vector(0, 0, 0);
+            scale  = Vector(1, 1, 1);
+            old_nv = Vector(1, 0, 0);
+            minimum_points_needed = PCR/4;
+            idx = 0;
+            memset(point_cloud, 0, sizeof(point_cloud));
+            LOGI("reset of compass calibration data");
+        }        
+    }
+    else {
+        center = Vector(0, 0, 0);
+        scale  = Vector(1, 1, 1);
+        old_nv = Vector(1, 0, 0);
+        minimum_points_needed = PCR/4;
+        idx = 0;
+        memset(point_cloud, 0, sizeof(point_cloud));
+        LOGI("reset of calibration data");
+    }
     fit_time = 0;
-    center = Vector(0, 0, 0);
-    scale  = Vector(1, 1, 1);
-    old_nv = Vector(1, 0, 0);
-    minimum_points_needed = PCR/4;
-    idx = 0;
-    memset(point_cloud, 0, sizeof(point_cloud));
 }
 
 Calibrator::~Calibrator()
@@ -70,7 +120,7 @@ void Calibrator::update(int time, Vector v)
             idx = i;
             break;
         }
-        
+
     }
 
     point_cloud[idx].time = time;
@@ -133,7 +183,32 @@ bool Calibrator::try_fit(int time)
         }
         delete[] x;
     }
-    
+
+    /* Save calibration data to a file. */
+    if(!calibrated && readingfromfile && center.x != 0 && center.y != 0 && center.z != 0) {
+        if(!fad_exsists) {
+            float calibration_data[139] =  {center.x, center.y, center.z,
+                                            scale.x, scale.y, scale.z,
+                                            old_nv.x, old_nv.y, old_nv.z,
+                                            (float)minimum_points_needed, (float)idx, 0, };
+            for(int i=0;i<32;i++) {
+                calibration_data[11+(i*4)] = point_cloud[i].v.x;
+                calibration_data[12+(i*4)] = point_cloud[i].v.y;
+                calibration_data[13+(i*4)] = point_cloud[i].v.z;
+                calibration_data[14+(i*4)] = (float)point_cloud[i].time;
+            }
+            FILE *fac = fopen("/data/misc/akmd.dat","wb");
+            if(fac != NULL) {
+                // sizeof(calibration_data) = 556 which is 139 elements of float
+                fwrite(calibration_data, sizeof(float), 139, fac);
+            }
+            fclose(fac);
+            calibrated = true;
+            LOGI("compass calibrated to offset=(%f %f %f) scale=(%f %f %f)", center.x, center.y, center.z, scale.x, scale.y, scale.z);
+        }
+        calibrated = true;
+    }    
+
     return true;
 }
 

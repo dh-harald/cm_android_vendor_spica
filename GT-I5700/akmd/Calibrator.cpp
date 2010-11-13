@@ -120,7 +120,7 @@ void Calibrator::update(int time, Vector v)
             idx = i;
             break;
         }
-        
+
     }
 
     point_cloud[idx].time = time;

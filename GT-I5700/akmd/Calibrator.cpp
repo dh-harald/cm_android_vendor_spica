@@ -4,6 +4,8 @@
 
 #include <math.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <fcntl.h>
 
 #include <utils/Log.h>
 

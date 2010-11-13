@@ -1,10 +1,10 @@
 alpha7.3:
 1. Updated CyanogenMod sources from github
-2. armv6-vfp optimisation
+2. armv6-vfp optimalisation
 3. Applied vflashbirdv's sound record and camcoder fix
 4. Using 100% CM wifi implementation (thanks to funman)
 5. Updated Ultimate Spica Recovery
-6. Sensor updates [cadavre]
+6. Sensor updates: compass is working! [cadavre]
 
 alpha7.2: 20101108.091305
 1. Ultimate Spica Recovery [Xmister]

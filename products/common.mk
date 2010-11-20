@@ -26,6 +26,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-data-only=1 \
     dalvik.vm.heapsize=30m
 
+# Default network type.
+# 0 => WCDMA preferred.
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_network=0
+
+# mobile interfaces
+PRODUCT_PROPERTY_OVERRIDES += \
+    mobiledata.interfaces=pdp0,eth0,gprs,ppp0
+
 PRODUCT_PACKAGES += \
     ADWLauncher \
     CMParts \

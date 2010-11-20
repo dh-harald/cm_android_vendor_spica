@@ -67,7 +67,7 @@ void Akmd::fill_result_vector(Vector o, Vector a, Vector m, short temperature, s
 /****************************************************************************/
 void Akmd::sleep_until_next_update()
 {
-    int delay = 200; /* Based on SensorManager.SENSOR_DELAY_NORMAL */
+    int delay = 300; /* Based on SensorManager.SENSOR_DELAY_NORMAL */
     int candidate_delay;
 
     ChipReader* chips[3] = { magnetometer_reader, accelerometer_reader, temperature_reader };
@@ -90,7 +90,7 @@ void Akmd::sleep_until_next_update()
      * possible.
      */
     if (delay <= 60) {
-        delay = 21;
+        delay = 60;
     } else {
         /* divide by 2 to get 2 real samples for the slow modes too. */
         delay /= 2;

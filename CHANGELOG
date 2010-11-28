@@ -1,3 +1,7 @@
+alpha7.4:
+1. Updated CyanogenMod sources from github
+2. Using kernel: kCriminal.r2 2.6.29.6
+
 alpha7.3:
 1. Updated CyanogenMod sources from github
 2. armv6-vfp optimalisation

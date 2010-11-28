@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/spica.mk
+    $(LOCAL_DIR)/spica.mk

@@ -1,13 +1,26 @@
-# make file for new hardware  from 
+# Copyright (C) 2009 The Android Open Source Project
 #
-LOCAL_PATH := $(call my-dir)
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
 #
-# no boot loader, so we don't need any of that stuff..  
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
-LOCAL_PATH := vendor/spica/GT-I5700
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 #
-include $(CLEAR_VARS)
-#
-# include more board specific stuff here? Such as Audio parameters.      
+# AndroidBoard.mk is a legacy mechanism to deal with a few
+# edge-cases that can't be managed otherwise. No new rules
+# should be added to this file.
 #
 
+LOCAL_PATH := $(call my-dir)
+
+#
+# Hack, because i'm lazy :)
+#
+include device/samsung/spica/AndroidBoard.mk

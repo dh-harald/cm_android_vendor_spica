@@ -1,4 +1,4 @@
-# Inherit AOSP device configuration for geeksphone one.
+# Inherit AOSP device configuration for galaxy spica.
 $(call inherit-product, device/samsung/spica/full_spica.mk)
 
 # Inherit some common cyanogenmod stuff.
@@ -20,6 +20,6 @@ ifdef CYANOGEN_NIGHTLY
         ro.modversion=CyanogenMod-6-$(shell date +%m%d%Y)-NIGHTLY-SPICA
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-6.1.0-RC1-Spica-alpha7.4
+        ro.modversion=CyanogenMod-6.1.0-RC1-Spica-alpha7.5
 endif
 

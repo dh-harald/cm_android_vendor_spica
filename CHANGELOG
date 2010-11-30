@@ -1,8 +1,12 @@
-alpha7.4:
+alpha7.5:
+1. Updated CyanogenMod sources from github
+2. Small fixes: airplane, network searching
+
+alpha7.4: 20101128.130826
 1. Updated CyanogenMod sources from github
 2. Using kernel: kCriminal.r2 2.6.29.6
 
-alpha7.3:
+alpha7.3: 20101115.142953
 1. Updated CyanogenMod sources from github
 2. armv6-vfp optimalisation
 3. Applied vflashbirdv's sound record and camcoder fix

@@ -1,3 +1,25 @@
+ STATUS
+========
++ Screen [LeshaK]
++ Touch/Multitouch [LeshaK/Gabriel-LG]
++ Audio [LeshaK/DE_NISkA/vflashbirdv]
++ Keys [Some keys doesn't works exactly same as Eclair]
++ GSM/GPRS/EDGE/3G [LeshaK/Criminal]
++ Vibrate [LeshaK/Gabriel-LG]
++ SD Card [mik_os/LeshaK]
++ Wifi [golecpch/funman/criminal]
++ Bluetooth [criminal]
++ Google services 20101020: (GMail/Market/Contacts/Calendar/NetworkLocationProvider)
++ GPS [criminal]
++ Sensors [DE-NISkA/Leshak/cadavre]
++ Camera [vflashbirdv/criminal]
+- Hardware accelerated movie playing (mp4/h264/DivX)
+
+alpha7.6:
+1. Updated CyanogenMod sources from github
+2. More fixes for network setting from cadavre
+3. APN bug fixed (?) needs testing
+
 alpha7.5:
 1. Updated CyanogenMod sources from github
 2. Small fixes: airplane, network searching, call waiting problem

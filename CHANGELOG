@@ -18,9 +18,10 @@
 alpha7.6:
 1. Updated CyanogenMod sources from github
 2. More fixes for network setting from cadavre
-3. APN bug fixed (?) needs testing
+3. Sensor fixes from cadavre
+4. APN bug fixed (?) needs testing
 
-alpha7.5:
+alpha7.5: 20101201.093857
 1. Updated CyanogenMod sources from github
 2. Small fixes: airplane, network searching, call waiting problem
 

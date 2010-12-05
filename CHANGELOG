@@ -23,6 +23,7 @@ alpha8:
 4. More fixes for network setting from cadavre
 5. Sensor fixes from cadavre
 6. APN bug fixed (?) needs testing
+7. Opensource lights driver [thanks to cadavre]
 
 alpha7.5: 20101201.093857
 1. Updated CyanogenMod sources from github

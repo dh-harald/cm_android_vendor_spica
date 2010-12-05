@@ -13,13 +13,16 @@
 + GPS [criminal]
 + Sensors [DE-NISkA/Leshak/cadavre]
 + Camera [vflashbirdv/criminal]
-- Hardware accelerated movie playing (mp4/h264/DivX)
++ Hardware accelerated movie playing (mp4/h264)
+- Hardware accelerated movie playing (DivX)
 
-alpha7.6:
+alpha8:
 1. Updated CyanogenMod sources from github
-2. More fixes for network setting from cadavre
-3. Sensor fixes from cadavre
-4. APN bug fixed (?) needs testing
+2. Hardware accelerated movie playing (mp4/h264) [big thanks goes to: vflashbirdv]
+3. Color camera preview [vflashbirdv]
+4. More fixes for network setting from cadavre
+5. Sensor fixes from cadavre
+6. APN bug fixed (?) needs testing
 
 alpha7.5: 20101201.093857
 1. Updated CyanogenMod sources from github

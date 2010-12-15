@@ -19,6 +19,7 @@
 alpha8.1:
 1. Airplane mode vs Google Services fix [cujo]
 2. Lock button fix [adi4motion]
+3. Fix audio hardware continuous work even not playing any sound [vflashbirdv]
 
 alpha8:
 1. Updated CyanogenMod sources from github

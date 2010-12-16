@@ -17,9 +17,10 @@
 - Hardware accelerated movie playing (DivX)
 
 alpha8.1:
-1. Airplane mode vs Google Services fix [cujo]
-2. Lock button fix [adi4motion]
-3. Fix audio hardware continuous work even not playing any sound [vflashbirdv]
+1. Updated CyanogenMod sources to 6.1.1
+2. Airplane mode vs Google Services fix [cujo]
+3. Lock button fix [adi4motion]
+4. Fix audio hardware continuous work even not playing any sound [vflashbirdv]
 
 alpha8:
 1. Updated CyanogenMod sources from github

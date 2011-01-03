@@ -20,6 +20,7 @@ alpha8.2:
 1. Nexus S audio drivers [vflashbirdv]
 2. Eclair style lock button fixed [cujo]
 3. Hungarian translation added (organized by Toth Marcell)
+4. Intercept camera drivers
 
 alpha8.1:
 1. Updated CyanogenMod sources to 6.1.1

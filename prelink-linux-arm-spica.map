@@ -102,8 +102,12 @@ libmediaplayerservice.so 0xA9200000 # [~1M]
 
 # assorted system libraries
 # Spica libs
+libChunkAlloc.so 		0xa8f00000 # [<64K]
+libGLESv1_CM_fimg.so 	0xa8c00000 # [<3M]
+libEGL_fimg.so 			0xa8b00000 # [<1M]
 libexpat.so             0xA8A00000 # [~1M]
 libwebcore.so           0xA8300000 # [~7M]
+libGLESv2_fimg.so 		0xa8000000 # [~3M]
 libhardware.so          0xA7F00000 # [<64K]
 libapp_process.so       0xA7D00000 # [???]
 libsystem_server.so     0xA7C00000 # [~1M]
@@ -180,12 +184,8 @@ libFFTEm.so             0xA2400000 # [~1M]
 libSR_AudioIn.so        0xA2300000 # [~1M] for external/srec
 libaudioflinger.so      0xA2200000 # [~1M]
 
-libskiagl.so            0xa2100000 # [~1M]
-libChunkAlloc.so               0xa1f00000 # [<64K]
-libGLESv1_CM_fimg.so   0xa1b00000 # [<4M]
-libEGL_fimg.so                         0xa1a00000 # [<1M]
-libskia.so              0xa1300000 # [~7M]
-libGLESv2_fimg.so              0xa1000000 # [~3M]
+libskia.so              0xA1B00000 # [~7M]
+libskiagl.so            0xA1A00000 # [~1M]
 
 
 # libraries for specific apps or temporary libraries

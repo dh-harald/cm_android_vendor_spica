@@ -3,7 +3,7 @@
 + Screen [LeshaK]
 + Touch/Multitouch [LeshaK/Gabriel-LG]
 + Audio [LeshaK/DE_NISkA/vflashbirdv]
-+ Keys [Some keys doesn't works exactly same as Eclair]
++ Keys [LeshaK/adi4motion/cujo]
 + GSM/GPRS/EDGE/3G [LeshaK/Criminal]
 + Vibrate [LeshaK/Gabriel-LG]
 + SD Card [mik_os/LeshaK]
@@ -15,6 +15,11 @@
 + Camera [vflashbirdv/criminal]
 + Hardware accelerated movie playing (mp4/h264) [vflashbirdv]
 - Hardware accelerated movie playing (DivX)
+
+alpha8.2:
+1. Nexus S audio drivers [vflashbirdv]
+2. Eclair style lock button fixed [cujo]
+3. Hungarian translation added (organized by Toth Marcell)
 
 alpha8.1:
 1. Updated CyanogenMod sources to 6.1.1

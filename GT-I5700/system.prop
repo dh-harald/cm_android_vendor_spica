@@ -10,9 +10,6 @@ keyguard.no_require_sim=true
 ro.media.dec.aud.wma.enabled=1
 ro.media.dec.vid.wmv.enabled=1
 
-net.dns1=8.8.4.4
-net.dns2=8.8.8.8
-
 #
 # multitouch support
 #

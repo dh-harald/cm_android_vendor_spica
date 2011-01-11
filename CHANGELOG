@@ -1,150 +1,19 @@
  STATUS
 ========
-+ Screen [LeshaK]
-+ Touch/Multitouch [LeshaK/Gabriel-LG]
-+ Audio [LeshaK/DE_NISkA/vflashbirdv]
-+ Keys [LeshaK/adi4motion/cujo]
-+ GSM/GPRS/EDGE/3G [LeshaK/Criminal]
-+ Vibrate [LeshaK/Gabriel-LG]
-+ SD Card [mik_os/LeshaK]
-+ Wifi [golecpch/funman/criminal]
++ GSM [LeshaK]
++ Audio [vflashbirdv]
++ SDCard/USB mass storage [LeshaK]
++ Wifi [criminal]
 + Bluetooth [criminal]
-+ Google services 20101020: (GMail/Market/Contacts/Calendar/NetworkLocationProvider)
-+ GPS [criminal]
-+ Sensors [DE-NISkA/Leshak/cadavre]
-+ Camera [vflashbirdv/criminal]
-+ Hardware accelerated movie playing (mp4/h264) [vflashbirdv]
-- Hardware accelerated movie playing (DivX)
+- Sleep mode 
+- HW acceleration
+- Sensors
+- GPS
 
-alpha8.2:
-1. Nexus S audio drivers [vflashbirdv]
-2. Eclair style lock button fixed [cujo]
-3. Hungarian translation added (organized by Toth Marcell)
-4. Intercept camera drivers
+ CHANGELOG
+===========
 
-alpha8.1:
-1. Updated CyanogenMod sources to 6.1.1
-2. Airplane mode vs Google Services fix [cujo]
-3. Lock button fix [adi4motion]
-4. Fix audio hardware continuous work even not playing any sound [vflashbirdv]
+alpha1:
+  initial release based on SamdroidMod 3.0.x alpha3/4 & CyanogenMod github tree
++ RILD fixes: airplane mode, call waiting, network searching
 
-alpha8:
-1. Updated CyanogenMod sources from github
-2. Hardware accelerated movie playing (mp4/h264) [big thanks goes to: vflashbirdv]
-3. Color camera preview [vflashbirdv]
-4. More fixes for network setting from cadavre
-5. Sensor fixes from cadavre
-6. APN bug fixed (?) needs testing
-7. Opensource lights driver [thanks to cadavre]
-
-alpha7.5: 20101201.093857
-1. Updated CyanogenMod sources from github
-2. Small fixes: airplane, network searching, call waiting problem
-
-alpha7.4: 20101128.130826
-1. Updated CyanogenMod sources from github
-2. Using kernel: kCriminal.r2 2.6.29.6
-
-alpha7.3: 20101115.142953
-1. Updated CyanogenMod sources from github
-2. armv6-vfp optimalisation
-3. Applied vflashbirdv's sound record and camcoder fix
-4. Using 100% CM wifi implementation (thanks to funman)
-5. Updated Ultimate Spica Recovery
-6. Sensor updates: compass is working! [cadavre]
-
-alpha7.2: 20101108.091305
-1. Ultimate Spica Recovery [Xmister]
-2. Compcache support [hotchili]
-
-alpha7.1: 20101104.204809
-1. Updated CyanogenMod sources from github
-2. Added multitouch driver 2.4 [Gabriel-LG]
-3. Update Xmister's recovery
-4. AppsOnSD is working (thanks for hotchili some rumor)
-5. Sensor fixes [cadavre]
-6. Possible Camera fix
-7. Improved vibrator driver [Gabriel-LG]
-8. video record color issue, voicedialer fix [vflashbird]
-9. Google apps update: 20101020
-
-alpha7: 20101028.083843
-1. Updated CyanogenMod sources to 6.1.0-RC1
-2. Applied video recording patch for camcoder [vflashbirdv]
-3. Applied audio recording patch for compressed audio format [vflashbirdv]
-4. Back to 5% battery driver
-5. Applied kernel patches: memory control tweak, sound fix [antibyte]
-6. Some installd & application install fix
-
-alpha6.5: 20101019.165833
-1. Updated CyanogenMod sources from github to recent version
-2. Added more sound routes to BT headsets [DE-NISkA]
-3. Add baudrate to speedup BT
-4. Corrected directions for accel, pitch, roll (DE-NISkA)
-5. Some script fixes: remount
-6. Delete 98bthack, we don't need it
-
-alpha6.4: 20101015.125310
-1. Updated CyanogenMod sources from github to recent version
-2. Applied volume control patch [vflashbirdv/DE-NISkA]
-3. Google apps update: 20101008
-4. Using Android/CyanogenMod Bluetooth with hacked brcm_patchram_plus
-5. Using Androbot's Gallery3D instead of CM's
-6. /system is now read-only, added ext&rfs supported remount command
-
-alpha6.3: 20101011.095301
-1. Updated CyanogenMod sources from github to recent version
-2. rild port phase #1: using own rild with Samsung's libril.so -- needs testing
-3. Fixed ARM optimalizations
-4. Using DE-NISkA's sound sources -- please test it!
-5. Applied qbanin's 1% step battery driver
-6. Added antibyte/Xmister's recovery for better ext2/ext4 compatibility -- needs testing
-7. Some init.rc fixes [ch33kybutt]  
-
-alpha6.2: 20101004.143423 
-1. Sensors are working! Big thanks goes to DE-NISkA
-2. Completly new bluetooth implementation based on i5800 sources, same result: only pairing
-3. Using DE-NISkA's sound sources, please test it!
-4. Google apps update: 20100930
-5. Several build.prop tweaks
-6. Adding SamdroidTools for APP2SD [LeshaK]
-7. Replaced bootanimation to official mdpi boot animation.
-8. Upgrade Multitouch driver to 2.3b [Gabriel-LG]
-
-alpha6.1: 20100929.130658 
-1. Updated CyanogenMod sources from github to recent version
-2. Disabled built-in tethering I hope wifi bug is gone!
-3. Add init.rc tweak by ch33kybutt
-4. Added bootanimation by 73v1n (Low Quality, High Speed)
-
-alpha6: 20100928.120730 
-1. Updated CyanogenMod sources from github to recent version
-2. (I hope) Fixed Superuser issue
-3. Fixed ext4 mounting typo
-4. Enabled built-in tethering It's not working!
-5. (I hope) Fixed network location problem
-
-alpha5.2: 20100927.103314
-1. Updated CyanogenMod sources from github to recent version
-2. Upgrade Google services to gapps-mdpi-20100926 from kanged.net
-3. Add 2.1 camera libraries: camera looks like working, Camera.apk: picture YES, movie: NO 
-4. Applied vflashbirdv's binary audio patches to solve in-call problem.
-5. Added multitouch 2.2
-6. Added more language support
-7. Added ext2/ext4 support in init.rc
-8. Added /etc/init.d/ running support
-9. Tried to solve Superuser issue, possible to lost root access in some cases  [tomorrow i'll try to fix it]
-
-alpha5.1: 20100924.090227.
-1. Applied DE-NISkA's patch, thanks! almost all sound issues are fixed
-2. FiX Bluetooth issues: Full 2.1 libraries and binaries seems working
-3. Updated CyanogenMod sources from github to recent version
-
-alpha5: 20100923.085323, based on i5700_Froyo_alpha5_with_gapps
-1. New kernel with MT v2.11b
-2. Apply headset patch [without DE-NISkA pathes, because it didn't worked for me]
-3. Apply vflashbirdv's anti reboot patch (works like a dream thanks!)
-4. Revert back 2.1 bluetooth libraries: BT looks like working!
-5. Apply GPS patch and revert back 2.1 rild: GPS looks like working!
-6. Upgrade Google services to gapps-mdpi-20100917 from kanged.net
-7. Using ADWLauncher instead of Launcher2

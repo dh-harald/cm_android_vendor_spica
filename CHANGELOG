@@ -13,6 +13,9 @@
  CHANGELOG
 ===========
 
+alpha2:
++ GPS
+
 alpha1:
   initial release based on SamdroidMod 3.0.x alpha3/4 & CyanogenMod github tree
 + RILD fixes: airplane mode, call waiting, network searching

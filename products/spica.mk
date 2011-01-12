@@ -17,9 +17,9 @@ PRODUCT_MANUFACTURER := Samsung
 
 ifdef CYANOGEN_NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-6-$(shell date +%m%d%Y)-NIGHTLY-SPICA
+        ro.modversion=CyanogenMod-7-$(shell date +%m%d%Y)-NIGHTLY-SPICA
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-7.0.0-RC0-Spica-alpha1
+        ro.modversion=CyanogenMod-7.0.0-RC0-Spica-alpha2
 endif
 

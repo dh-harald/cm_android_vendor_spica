@@ -19,7 +19,9 @@
 alpha8.3:
 1. High sample rate bug fix for libaudio [vflashbirdv]
 2. Add hardware render support for playback [vflashbirdv]
-3. Add native wifi tether support
+3. skia optimization from Rockie Chen
+4. GPS tweaks from sucka. More info: http://tinyurl.com/4m8zse2
+5. Add native wifi tether support
 
 alpha8.2:
 1. Nexus S audio drivers [vflashbirdv]

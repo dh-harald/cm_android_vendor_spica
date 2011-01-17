@@ -16,6 +16,11 @@
 + Hardware accelerated movie playing (mp4/h264) [vflashbirdv]
 - Hardware accelerated movie playing (DivX)
 
+alpha8.3:
+1. High sample rate bug fix for libaudio [vflashbirdv]
+2. Add hardware render support for playback [vflashbirdv]
+3. Add native wifi tether support
+
 alpha8.2:
 1. Nexus S audio drivers [vflashbirdv]
 2. Eclair style lock button fixed [cujo]

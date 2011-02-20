@@ -5,16 +5,19 @@
 + SDCard/USB mass storage [LeshaK]
 + Wifi [criminal]
 + Bluetooth [criminal]
-- Sleep mode 
-- HW acceleration
-- Sensors
-- GPS
++ Sensors [criminal]
++ HW acceleration [tom3q]
+- Sleep bug 
+- Camera
 
  CHANGELOG
 ===========
 
 alpha2:
+  Updated CM source from github: 7.0.0-RC1
 + GPS
++ Sensors
++ USB storage fix
 
 alpha1:
   initial release based on SamdroidMod 3.0.x alpha3/4 & CyanogenMod github tree

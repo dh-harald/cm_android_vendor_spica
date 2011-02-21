@@ -5,18 +5,18 @@
 + SDCard/USB mass storage [LeshaK]
 + Wifi [criminal]
 + Bluetooth [criminal]
-+ Sensors [criminal]
++ Sensors [cadavre/criminal]
 + HW acceleration [tom3q]
-- Sleep bug 
 - Camera
 
  CHANGELOG
 ===========
 
 alpha2:
+  SoD bug solved, thanks to munchy_cool & FatTire
   Updated CM source from github: 7.0.0-RC1
 + GPS
-+ Sensors
++ Sensors (cadavre's new sensor drivers)
 + USB storage fix
 
 alpha1:

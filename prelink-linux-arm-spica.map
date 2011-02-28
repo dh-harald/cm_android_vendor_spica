@@ -102,12 +102,8 @@ libmediaplayerservice.so 0xA9200000 # [~1M]
 
 # assorted system libraries
 # Spica libs
-libChunkAlloc.so 		0xa8f00000 # [<64K]
-libGLESv1_CM_fimg.so 	0xa8c00000 # [<3M]
-libEGL_fimg.so 			0xa8b00000 # [<1M]
 libexpat.so             0xA8A00000 # [~1M]
 libwebcore.so           0xA8300000 # [~7M]
-libGLESv2_fimg.so 		0xa8000000 # [~3M]
 libhardware.so          0xA7F00000 # [<64K]
 libapp_process.so       0xA7D00000 # [???]
 libsystem_server.so     0xA7C00000 # [~1M]
@@ -123,26 +119,32 @@ libttssynthproxy.so     0xA7200000 # [~1M] for frameworks/base
 libttspico.so           0xA7000000 # [~2M] for external/svox
 
 # pv libraries
-libpvasf.so                    0xA6F00000 # [???]
-libpvasfreg.so                 0xA6E00000 # [???]
-libomx_sharedlibrary.so        0xA6D00000 # [~1M]
-libopencore_download.so        0xA6C00000 # [~1M]
-libopencore_downloadreg.so     0xA6B00000 # [~1M]
-libopencore_net_support.so     0xA6800000 # [~3M]
-libopencore_rtsp.so            0xA6200000 # [~6M]
-libopencore_rtspreg.so         0xA6100000 # [~1M]
-libopencore_author.so          0xA5D00000 # [~4M]
-libomx_aacdec_sharedlibrary.so 0xA5B00000 # [~2M]
-libomx_amrdec_sharedlibrary.so 0xA5A00000 # [~1M]
-libomx_amrenc_sharedlibrary.so 0xA5900000 # [~1M]
-libomx_avcdec_sharedlibrary.so 0xA5800000 # [~1M]
-libomx_avcenc_sharedlibrary.so 0xA5700000 # [???]
-libomx_m4vdec_sharedlibrary.so 0xA5600000 # [~1M]
-libomx_m4venc_sharedlibrary.so 0xA5500000 # [???]
-libomx_mp3dec_sharedlibrary.so 0xA5400000 # [~1M]
-libopencore_mp4local.so        0xA5200000 # [~2M]
-libopencore_mp4localreg.so     0xA5100000 # [~1M]
-libopencore_player.so          0xA4800000 # [~9M]
+#libpvasf.so                    0xA6F00000 # [???]
+#libpvasfreg.so                 0xA6E00000 # [???]
+#libomx_sharedlibrary.so        0xA6D00000 # [~1M]
+#libopencore_download.so        0xA6C00000 # [~1M]
+#libopencore_downloadreg.so     0xA6B00000 # [~1M]
+#libopencore_net_support.so     0xA6800000 # [~3M]
+#libopencore_rtsp.so            0xA6200000 # [~6M]
+#libopencore_rtspreg.so         0xA6100000 # [~1M]
+#libopencore_author.so          0xA5D00000 # [~4M]
+#libomx_aacdec_sharedlibrary.so 0xA5B00000 # [~2M]
+#libomx_amrdec_sharedlibrary.so 0xA5A00000 # [~1M]
+#libomx_amrenc_sharedlibrary.so 0xA5900000 # [~1M]
+#libomx_avcdec_sharedlibrary.so 0xA5800000 # [~1M]
+#libomx_avcenc_sharedlibrary.so 0xA5700000 # [???]
+#libomx_m4vdec_sharedlibrary.so 0xA5600000 # [~1M]
+#libomx_m4venc_sharedlibrary.so 0xA5500000 # [???]
+#libomx_mp3dec_sharedlibrary.so 0xA5400000 # [~1M]
+#libopencore_mp4local.so        0xA5200000 # [~2M]
+#libopencore_mp4localreg.so     0xA5100000 # [~1M]
+#libopencore_player.so          0xA4800000 # [~9M]
+
+# GB stuffz
+libeffects.so                   0xA6F00000 # [<64K]
+libgui.so                       0xA6E00000 # [~1M]
+libandroid.so                   0xA6D00000 # [~1M]
+libaudioeffect_jni.so           0xA6C00000 # [???]
 
 # opencore hardware support
 libmm-adspsvc.so              0xA4700000 # [<64K]
@@ -184,9 +186,12 @@ libFFTEm.so             0xA2400000 # [~1M]
 libSR_AudioIn.so        0xA2300000 # [~1M] for external/srec
 libaudioflinger.so      0xA2200000 # [~1M]
 
-libskia.so              0xA1B00000 # [~7M]
-libskiagl.so            0xA1A00000 # [~1M]
-
+libskiagl.so            0xa2100000 # [~1M]
+libChunkAlloc.so        0xa1f00000 # [<64K]
+libGLESv1_CM_fimg.so    0xa1b00000 # [<4M]
+libEGL_fimg.so          0xa1a00000 # [<1M]
+libskia.so              0xa1300000 # [~7M]
+libGLESv2_fimg.so       0xa1000000 # [~3M]
 
 # libraries for specific apps or temporary libraries
 libcam_ipl.so           0x9F000000 # [???]
@@ -219,3 +224,4 @@ libstlport.so           0x9D100000 # [~3M] for external/stlport
 libzxing.so             0x9D000000 # [<64K] for goggles
 libinterstitial.so      0x9CF00000 # [<64K] for goggles
 liblept.so              0x9CA00000 # [~5M] for external/leptonica
+

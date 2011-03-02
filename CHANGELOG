@@ -12,6 +12,16 @@
  CHANGELOG
 ===========
 
+alpha2.1:
+  Updated CM source from github
+  Updated tom3q's 3D drivers
+  Updated gapps-20110120
++ SIP calls
++ T-Mobile themes support
++ rild fix
++ Superuser fix
++ OpenVPN/VPN fixes
+
 alpha2:
   SoD bug solved, thanks to munchy_cool & FatTire
   Updated CM source from github: 7.0.0-RC1

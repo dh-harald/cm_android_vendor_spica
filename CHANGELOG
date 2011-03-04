@@ -12,6 +12,9 @@
  CHANGELOG
 ===========
 
+alpha2.2:
+  Updated CM source from github (2.3.3)
+
 alpha2.1:
   Updated CM source from github
   Updated tom3q's 3D drivers
